@@ -16,8 +16,38 @@
   --placeholder: #d9d9d9;
   --placeholder-text: #777;
   --button: #444;
+  --button-text: #fff;
   --gutter: 16px;
   --max-width: 1080px;
+}
+
+/* Dark theme: follows the OS setting unless a light theme is forced */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --text: #e6e6e6;
+    --text-muted: #a8a8a8;
+    --bg: #1b1b1b;
+    --bg-muted: #242424;
+    --line: #444;
+    --placeholder: #3a3a3a;
+    --placeholder-text: #a0a0a0;
+    --button: #d6d6d6;
+    --button-text: #1b1b1b;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --text: #e6e6e6;
+  --text-muted: #a8a8a8;
+  --bg: #1b1b1b;
+  --bg-muted: #242424;
+  --line: #444;
+  --placeholder: #3a3a3a;
+  --placeholder-text: #a0a0a0;
+  --button: #d6d6d6;
+  --button-text: #1b1b1b;
+  color-scheme: dark;
 }
 
 html {
@@ -161,7 +191,7 @@ ol {
   padding: 12px 20px;
   min-height: 44px;
   background: var(--button);
-  color: #fff;
+  color: var(--button-text);
   font-weight: 600;
   text-decoration: none;
   border: 2px solid var(--button);
