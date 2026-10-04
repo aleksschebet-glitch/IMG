@@ -623,3 +623,260 @@ button.button {
 a.placeholder {
   text-decoration: none;
 }
+
+/* Paid checklist */
+.demo-bar {
+  padding-block: 12px;
+  background: var(--bg-muted);
+  border-bottom: 2px dashed var(--text-muted);
+}
+
+.demo-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 24px;
+}
+
+.demo-label {
+  width: 100%;
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.segmented {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.segmented legend {
+  float: left;
+  margin-right: 6px;
+  padding: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.segmented label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 6px 10px;
+  font-size: 0.875rem;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  cursor: pointer;
+}
+
+.segmented label:has(input:checked) {
+  box-shadow: inset 0 0 0 2px var(--text);
+}
+
+.segmented label:has(input:focus-visible) {
+  outline: 3px solid var(--text);
+  outline-offset: 2px;
+}
+
+.segmented input {
+  margin: 0;
+  accent-color: var(--text);
+}
+
+.checklist-header {
+  padding-block: 32px 8px;
+}
+
+.profile-line {
+  font-weight: 600;
+}
+
+.update-status {
+  color: var(--text-muted);
+}
+
+.checklist-progress {
+  margin: 24px 0 0;
+}
+
+#checklist:not([data-level="tailored"]) .only-tailored,
+#checklist:not([data-updates="within"]) .only-within,
+#checklist:not([data-updates="after"]) .only-after,
+#checklist[data-level="overview"] .step-details,
+#checklist[data-level="tailored"] .step[data-tailored="no"] {
+  display: none;
+}
+
+.checklist-layout {
+  display: grid;
+  gap: 24px;
+  padding-block: 24px 48px;
+}
+
+.stage-nav {
+  display: none;
+}
+
+.nav-title {
+  margin-bottom: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.stage-nav ol {
+  list-style: none;
+  display: grid;
+  gap: 4px;
+}
+
+.stage-nav a {
+  display: block;
+  padding: 6px 10px;
+  color: var(--text);
+  text-decoration: none;
+  border-left: 2px solid var(--line);
+}
+
+.stage-nav a:hover,
+.stage-nav a:focus-visible {
+  border-left-color: var(--text);
+  text-decoration: underline;
+}
+
+.jump-field {
+  margin-bottom: 24px;
+}
+
+.stages {
+  display: grid;
+  gap: 40px;
+  counter-reset: step;
+}
+
+.stage {
+  scroll-margin-top: 16px;
+}
+
+.stage h2 {
+  font-size: 1.25rem;
+}
+
+.step-list {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  counter-increment: step;
+}
+
+.step-check {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  margin: 4px 0 0;
+  accent-color: var(--text);
+}
+
+.step-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.step-body p {
+  margin-bottom: 8px;
+}
+
+.check-title {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.step-num::before {
+  content: "Step " counter(step) ": ";
+}
+
+.step:has(.step-check:checked) .check-title {
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+.source-link,
+.checklist-footer a {
+  color: var(--text);
+}
+
+.source-link {
+  font-size: 0.875rem;
+}
+
+.step-details {
+  margin-top: 12px;
+  padding-top: 4px;
+  border-top: 1px solid var(--line);
+}
+
+.step-details summary {
+  padding: 8px 0;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.detail-grid {
+  display: grid;
+  gap: 12px;
+  padding-top: 4px;
+}
+
+.detail-grid h4 {
+  margin: 0 0 6px;
+  font-size: 0.875rem;
+}
+
+.placeholder--line {
+  height: 48px;
+}
+
+.checklist-footer {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+@media (min-width: 960px) {
+  .checklist-layout {
+    grid-template-columns: 14rem minmax(0, 1fr);
+    gap: 48px;
+    align-items: start;
+  }
+
+  .stage-nav {
+    display: block;
+    position: sticky;
+    top: 16px;
+  }
+
+  .jump-field {
+    display: none;
+  }
+
+  .detail-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

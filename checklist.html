@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paid Checklist Wireframe</title>
+  <meta name="description" content="Wireframe: paid checklist page for the US licensing pathway finder.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- WIREFRAME-ONLY DEMO SWITCHER -->
+  <div class="demo-bar" role="region" aria-label="Wireframe-only demo controls">
+    <div class="container demo-inner">
+      <p class="demo-label">Wireframe-only control. Not part of the product.</p>
+      <fieldset class="segmented">
+        <legend>Level</legend>
+        <label><input type="radio" name="demo-level" value="overview"> Overview</label>
+        <label><input type="radio" name="demo-level" value="detailed" checked> Detailed</label>
+        <label><input type="radio" name="demo-level" value="tailored"> Tailored</label>
+      </fieldset>
+      <fieldset class="segmented">
+        <legend>Updates</legend>
+        <label><input type="radio" name="demo-updates" value="within" checked> Within 30 days</label>
+        <label><input type="radio" name="demo-updates" value="after"> After 30 days</label>
+      </fieldset>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="placeholder placeholder--logo" aria-label="Logo placeholder">Logo</div>
+    </div>
+  </header>
+
+  <div id="checklist" data-level="detailed" data-updates="within">
+
+    <!-- 1. HEADER -->
+    <div class="container checklist-header">
+      <p class="section-label">Paid checklist</p>
+      <h1 id="checklist-title">Physician &rarr; RN &middot; Detailed</h1>
+      <p class="profile-line">Trained in India &middot; Texas &middot; Considering a different role</p>
+      <p class="only-tailored">Ordered for: Speed, Lower cost</p>
+      <p class="update-status only-within">Updates included until [date]. Last updated: [date].</p>
+      <p class="update-status only-after">Updates for this checklist ended on [date]. Last updated: [date]. Rules change, so confirm critical steps with the official source.</p>
+      <div class="actions">
+        <button class="button button--secondary" type="button">Download PDF</button>
+      </div>
+      <p class="small cta-note">PDF generated on [date]. The online version always shows the latest updates.</p>
+
+      <!-- 2. PROGRESS -->
+      <div class="progress checklist-progress">
+        <p class="progress-text" id="progress-text" aria-live="polite">4 of 18 steps done</p>
+        <div class="progress-bar" aria-hidden="true"><span id="progress-fill"></span></div>
+      </div>
+    </div>
+
+    <!-- 3–5. STAGES AND NAVIGATION -->
+    <div class="container checklist-layout">
+      <nav class="stage-nav" aria-label="Stages">
+        <p class="nav-title">Stages</p>
+        <ol>
+            <li><a href="#stage-1">Stage 1: Stage name</a></li>
+            <li><a href="#stage-2">Stage 2: Stage name</a></li>
+            <li><a href="#stage-3">Stage 3: Stage name</a></li>
+            <li><a href="#stage-4">Stage 4: Stage name</a></li>
+        </ol>
+      </nav>
+
+      <div class="checklist-main">
+        <div class="field jump-field">
+          <label for="jump">Jump to stage</label>
+          <select class="input" id="jump">
+            <option value="" selected disabled>Choose a stage</option>
+              <option value="stage-1">Stage 1: Stage name (placeholder)</option>
+              <option value="stage-2">Stage 2: Stage name (placeholder)</option>
+              <option value="stage-3">Stage 3: Stage name (placeholder)</option>
+              <option value="stage-4">Stage 4: Stage name (placeholder)</option>
+          </select>
+        </div>
+
+        <div class="stages">
+          <section class="stage" id="stage-1" aria-labelledby="stage-1-title">
+            <h2 id="stage-1-title">Stage 1: Stage name (placeholder)</h2>
+            <ol class="step-list">
+            <li class="card step">
+              <input class="step-check" type="checkbox" id="step-1" checked>
+              <div class="step-body">
+                <p class="tags"><span class="tag">Sample content</span></p>
+                <label class="check-title" for="step-1"><span class="step-num"></span>Step title (placeholder)</label>
+                <p>Placeholder: one sentence describing what to do in this step.</p>
+                <a class="source-link" href="#" data-placeholder-link>Source: official website (placeholder)</a>
+                <details class="step-details">
+                  <summary>Details</summary>
+                  <div class="detail-grid">
+                    <div>
+                      <h4>Documents</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">Documents list (placeholder)</div>
+                    </div>
+                    <div>
+                      <h4>Application stages</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">Application stages (placeholder)</div>
+                    </div>
+                    <div>
+                      <h4>State requirements</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">State requirements (placeholder)</div>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </li>
+            <li class="card step">
+              <input class="step-check" type="checkbox" id="step-2" checked>
+              <div class="step-body">
+                <p class="tags"><span class="tag">Sample content</span></p>
+                <label class="check-title" for="step-2"><span class="step-num"></span>Step title (placeholder)</label>
+                <p>Placeholder: one sentence describing what to do in this step.</p>
+                <a class="source-link" href="#" data-placeholder-link>Source: official website (placeholder)</a>
+                <details class="step-details">
+                  <summary>Details</summary>
+                  <div class="detail-grid">
+                    <div>
+                      <h4>Documents</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">Documents list (placeholder)</div>
+                    </div>
+                    <div>
+                      <h4>Application stages</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">Application stages (placeholder)</div>
+                    </div>
+                    <div>
+                      <h4>State requirements</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">State requirements (placeholder)</div>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </li>
+            <li class="card step">
+              <input class="step-check" type="checkbox" id="step-3" checked>
+              <div class="step-body">
+                <p class="tags"><span class="tag">Sample content</span><span class="tag tag--strong">State-specific</span></p>
+                <label class="check-title" for="step-3"><span class="step-num"></span>Step title (placeholder)</label>
+                <p>Placeholder: one sentence describing what to do in this step.</p>
+                <a class="source-link" href="#" data-placeholder-link>Source: official website (placeholder)</a>
+                <details class="step-details">
+                  <summary>Details</summary>
+                  <div class="detail-grid">
+                    <div>
+                      <h4>Documents</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">Documents list (placeholder)</div>
+                    </div>
+                    <div>
+                      <h4>Application stages</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">Application stages (placeholder)</div>
+                    </div>
+                    <div>
+                      <h4>State requirements</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">State requirements (placeholder)</div>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </li>
+            <li class="card step">
+              <input class="step-check" type="checkbox" id="step-4" checked>
+              <div class="step-body">
+                <p class="tags"><span class="tag">Sample content</span></p>
+                <label class="check-title" for="step-4"><span class="step-num"></span>Step title (placeholder)</label>
+                <p>Placeholder: one sentence describing what to do in this step.</p>
+                <a class="source-link" href="#" data-placeholder-link>Source: official website (placeholder)</a>
+                <details class="step-details">
+                  <summary>Details</summary>
+                  <div class="detail-grid">
+                    <div>
+                      <h4>Documents</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">Documents list (placeholder)</div>
+                    </div>
+                    <div>
+                      <h4>Application stages</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">Application stages (placeholder)</div>
+                    </div>
+                    <div>
+                      <h4>State requirements</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">State requirements (placeholder)</div>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </li>
+            <li class="card step" data-tailored="no">
+              <input class="step-check" type="checkbox" id="step-5">
+              <div class="step-body">
+                <p class="tags"><span class="tag">Sample content</span></p>
+                <label class="check-title" for="step-5"><span class="step-num"></span>Step title (placeholder)</label>
+                <p>Placeholder: one sentence describing what to do in this step.</p>
+                <a class="source-link" href="#" data-placeholder-link>Source: official website (placeholder)</a>
+                <details class="step-details">
+                  <summary>Details</summary>
+                  <div class="detail-grid">
+                    <div>
+                      <h4>Documents</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">Documents list (placeholder)</div>
+                    </div>
+                    <div>
+                      <h4>Application stages</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">Application stages (placeholder)</div>
+                    </div>
+                    <div>
+                      <h4>State requirements</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">State requirements (placeholder)</div>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </li>
+            </ol>
+          </section>
+
+          <section class="stage" id="stage-2" aria-labelledby="stage-2-title">
+            <h2 id="stage-2-title">Stage 2: Stage name (placeholder)</h2>
+            <ol class="step-list">
+            <li class="card step">
+              <input class="step-check" type="checkbox" id="step-6">
+              <div class="step-body">
+                <p class="tags"><span class="tag">Sample content</span></p>
+                <label class="check-title" for="step-6"><span class="step-num"></span>Step title (placeholder)</label>
+                <p>Placeholder: one sentence describing what to do in this step.</p>
+                <a class="source-link" href="#" data-placeholder-link>Source: official website (placeholder)</a>
+                <details class="step-details">
+                  <summary>Details</summary>
+                  <div class="detail-grid">
+                    <div>
+                      <h4>Documents</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">Documents list (placeholder)</div>
+                    </div>
+                    <div>
+                      <h4>Application stages</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">Application stages (placeholder)</div>
+                    </div>
+                    <div>
+                      <h4>State requirements</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">State requirements (placeholder)</div>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </li>
+            <li class="card step">
+              <input class="step-check" type="checkbox" id="step-7">
+              <div class="step-body">
+                <p class="tags"><span class="tag">Sample content</span><span class="tag tag--strong">State-specific</span></p>
+                <label class="check-title" for="step-7"><span class="step-num"></span>Step title (placeholder)</label>
+                <p>Placeholder: one sentence describing what to do in this step.</p>
+                <a class="source-link" href="#" data-placeholder-link>Source: official website (placeholder)</a>
+                <details class="step-details">
+                  <summary>Details</summary>
+                  <div class="detail-grid">
+                    <div>
+                      <h4>Documents</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">Documents list (placeholder)</div>
+                    </div>
+                    <div>
+                      <h4>Application stages</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">Application stages (placeholder)</div>
+                    </div>
+                    <div>
+                      <h4>State requirements</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">State requirements (placeholder)</div>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </li>
+            <li class="card step" data-tailored="no">
+              <input class="step-check" type="checkbox" id="step-8">
+              <div class="step-body">
+                <p class="tags"><span class="tag">Sample content</span></p>
+                <label class="check-title" for="step-8"><span class="step-num"></span>Step title (placeholder)</label>
+                <p>Placeholder: one sentence describing what to do in this step.</p>
+                <a class="source-link" href="#" data-placeholder-link>Source: official website (placeholder)</a>
+                <details class="step-details">
+                  <summary>Details</summary>
+                  <div class="detail-grid">
+                    <div>
+                      <h4>Documents</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">Documents list (placeholder)</div>
+                    </div>
+                    <div>
+                      <h4>Application stages</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">Application stages (placeholder)</div>
+                    </div>
+                    <div>
+                      <h4>State requirements</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">State requirements (placeholder)</div>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </li>
+            <li class="card step">
+              <input class="step-check" type="checkbox" id="step-9">
+              <div class="step-body">
+                <p class="tags"><span class="tag">Sample content</span></p>
+                <label class="check-title" for="step-9"><span class="step-num"></span>Step title (placeholder)</label>
+                <p>Placeholder: one sentence describing what to do in this step.</p>
+                <p class="small route-note">This step requires eligibility to work in the US; verify separately.</p>
+                <a class="source-link" href="#" data-placeholder-link>Source: official website (placeholder)</a>
+                <details class="step-details">
+                  <summary>Details</summary>
+                  <div class="detail-grid">
+                    <div>
+                      <h4>Documents</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">Documents list (placeholder)</div>
+                    </div>
+                    <div>
+                      <h4>Application stages</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">Application stages (placeholder)</div>
+                    </div>
+                    <div>
+                      <h4>State requirements</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">State requirements (placeholder)</div>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </li>
+            <li class="card step" data-tailored="no">
+              <input class="step-check" type="checkbox" id="step-10">
+              <div class="step-body">
+                <p class="tags"><span class="tag">Sample content</span></p>
+                <label class="check-title" for="step-10"><span class="step-num"></span>Step title (placeholder)</label>
+                <p>Placeholder: one sentence describing what to do in this step.</p>
+                <a class="source-link" href="#" data-placeholder-link>Source: official website (placeholder)</a>
+                <details class="step-details">
+                  <summary>Details</summary>
+                  <div class="detail-grid">
+                    <div>
+                      <h4>Documents</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">Documents list (placeholder)</div>
+                    </div>
+                    <div>
+                      <h4>Application stages</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">Application stages (placeholder)</div>
+                    </div>
+                    <div>
+                      <h4>State requirements</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">State requirements (placeholder)</div>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </li>
+            </ol>
+          </section>
+
+          <section class="stage" id="stage-3" aria-labelledby="stage-3-title">
+            <h2 id="stage-3-title">Stage 3: Stage name (placeholder)</h2>
+            <ol class="step-list">
+            <li class="card step">
+              <input class="step-check" type="checkbox" id="step-11">
+              <div class="step-body">
+                <p class="tags"><span class="tag">Sample content</span><span class="tag tag--strong">State-specific</span></p>
+                <label class="check-title" for="step-11"><span class="step-num"></span>Step title (placeholder)</label>
+                <p>Placeholder: one sentence describing what to do in this step.</p>
+                <a class="source-link" href="#" data-placeholder-link>Source: official website (placeholder)</a>
+                <details class="step-details">
+                  <summary>Details</summary>
+                  <div class="detail-grid">
+                    <div>
+                      <h4>Documents</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">Documents list (placeholder)</div>
+                    </div>
+                    <div>
+                      <h4>Application stages</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">Application stages (placeholder)</div>
+                    </div>
+                    <div>
+                      <h4>State requirements</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">State requirements (placeholder)</div>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </li>
+            <li class="card step">
+              <input class="step-check" type="checkbox" id="step-12">
+              <div class="step-body">
+                <p class="tags"><span class="tag">Sample content</span></p>
+                <label class="check-title" for="step-12"><span class="step-num"></span>Step title (placeholder)</label>
+                <p>Placeholder: one sentence describing what to do in this step.</p>
+                <a class="source-link" href="#" data-placeholder-link>Source: official website (placeholder)</a>
+                <details class="step-details">
+                  <summary>Details</summary>
+                  <div class="detail-grid">
+                    <div>
+                      <h4>Documents</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">Documents list (placeholder)</div>
+                    </div>
+                    <div>
+                      <h4>Application stages</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">Application stages (placeholder)</div>
+                    </div>
+                    <div>
+                      <h4>State requirements</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">State requirements (placeholder)</div>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </li>
+            <li class="card step" data-tailored="no">
+              <input class="step-check" type="checkbox" id="step-13">
+              <div class="step-body">
+                <p class="tags"><span class="tag">Sample content</span></p>
+                <label class="check-title" for="step-13"><span class="step-num"></span>Step title (placeholder)</label>
+                <p>Placeholder: one sentence describing what to do in this step.</p>
+                <a class="source-link" href="#" data-placeholder-link>Source: official website (placeholder)</a>
+                <details class="step-details">
+                  <summary>Details</summary>
+                  <div class="detail-grid">
+                    <div>
+                      <h4>Documents</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">Documents list (placeholder)</div>
+                    </div>
+                    <div>
+                      <h4>Application stages</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">Application stages (placeholder)</div>
+                    </div>
+                    <div>
+                      <h4>State requirements</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">State requirements (placeholder)</div>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </li>
+            <li class="card step" data-tailored="no">
+              <input class="step-check" type="checkbox" id="step-14">
+              <div class="step-body">
+                <p class="tags"><span class="tag">Sample content</span></p>
+                <label class="check-title" for="step-14"><span class="step-num"></span>Step title (placeholder)</label>
+                <p>Placeholder: one sentence describing what to do in this step.</p>
+                <a class="source-link" href="#" data-placeholder-link>Source: official website (placeholder)</a>
+                <details class="step-details">
+                  <summary>Details</summary>
+                  <div class="detail-grid">
+                    <div>
+                      <h4>Documents</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">Documents list (placeholder)</div>
+                    </div>
+                    <div>
+                      <h4>Application stages</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">Application stages (placeholder)</div>
+                    </div>
+                    <div>
+                      <h4>State requirements</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">State requirements (placeholder)</div>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </li>
+            </ol>
+          </section>
+
+          <section class="stage" id="stage-4" aria-labelledby="stage-4-title">
+            <h2 id="stage-4-title">Stage 4: Stage name (placeholder)</h2>
+            <ol class="step-list">
+            <li class="card step">
+              <input class="step-check" type="checkbox" id="step-15">
+              <div class="step-body">
+                <p class="tags"><span class="tag">Sample content</span><span class="tag tag--strong">State-specific</span></p>
+                <label class="check-title" for="step-15"><span class="step-num"></span>Step title (placeholder)</label>
+                <p>Placeholder: one sentence describing what to do in this step.</p>
+                <a class="source-link" href="#" data-placeholder-link>Source: official website (placeholder)</a>
+                <details class="step-details">
+                  <summary>Details</summary>
+                  <div class="detail-grid">
+                    <div>
+                      <h4>Documents</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">Documents list (placeholder)</div>
+                    </div>
+                    <div>
+                      <h4>Application stages</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">Application stages (placeholder)</div>
+                    </div>
+                    <div>
+                      <h4>State requirements</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">State requirements (placeholder)</div>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </li>
+            <li class="card step">
+              <input class="step-check" type="checkbox" id="step-16">
+              <div class="step-body">
+                <p class="tags"><span class="tag">Sample content</span></p>
+                <label class="check-title" for="step-16"><span class="step-num"></span>Step title (placeholder)</label>
+                <p>Placeholder: one sentence describing what to do in this step.</p>
+                <p class="small route-note">This step requires eligibility to work in the US; verify separately.</p>
+                <a class="source-link" href="#" data-placeholder-link>Source: official website (placeholder)</a>
+                <details class="step-details">
+                  <summary>Details</summary>
+                  <div class="detail-grid">
+                    <div>
+                      <h4>Documents</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">Documents list (placeholder)</div>
+                    </div>
+                    <div>
+                      <h4>Application stages</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">Application stages (placeholder)</div>
+                    </div>
+                    <div>
+                      <h4>State requirements</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">State requirements (placeholder)</div>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </li>
+            <li class="card step">
+              <input class="step-check" type="checkbox" id="step-17">
+              <div class="step-body">
+                <p class="tags"><span class="tag">Sample content</span></p>
+                <label class="check-title" for="step-17"><span class="step-num"></span>Step title (placeholder)</label>
+                <p>Placeholder: one sentence describing what to do in this step.</p>
+                <a class="source-link" href="#" data-placeholder-link>Source: official website (placeholder)</a>
+                <details class="step-details">
+                  <summary>Details</summary>
+                  <div class="detail-grid">
+                    <div>
+                      <h4>Documents</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">Documents list (placeholder)</div>
+                    </div>
+                    <div>
+                      <h4>Application stages</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">Application stages (placeholder)</div>
+                    </div>
+                    <div>
+                      <h4>State requirements</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">State requirements (placeholder)</div>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </li>
+            <li class="card step" data-tailored="no">
+              <input class="step-check" type="checkbox" id="step-18">
+              <div class="step-body">
+                <p class="tags"><span class="tag">Sample content</span></p>
+                <label class="check-title" for="step-18"><span class="step-num"></span>Step title (placeholder)</label>
+                <p>Placeholder: one sentence describing what to do in this step.</p>
+                <a class="source-link" href="#" data-placeholder-link>Source: official website (placeholder)</a>
+                <details class="step-details">
+                  <summary>Details</summary>
+                  <div class="detail-grid">
+                    <div>
+                      <h4>Documents</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">Documents list (placeholder)</div>
+                    </div>
+                    <div>
+                      <h4>Application stages</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">Application stages (placeholder)</div>
+                    </div>
+                    <div>
+                      <h4>State requirements</h4>
+                      <div class="placeholder placeholder--line" aria-hidden="true">State requirements (placeholder)</div>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </li>
+            </ol>
+          </section>
+
+        </div>
+
+        <!-- 6. FOOTER -->
+        <footer class="checklist-footer">
+          <p>Last updated: [date] &middot; <a href="#" data-placeholder-link>Report an outdated step</a></p>
+          <p class="small">This site provides general information about US licensing and training pathways. It is not legal, immigration, or professional advice, and it does not cover immigration matters.</p>
+        </footer>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Demo switching, progress count and stage jumping only. Nothing is stored or sent.
+    (function () {
+      var root = document.getElementById('checklist');
+      var LEVELS = { overview: 'Overview', detailed: 'Detailed', tailored: 'Tailored' };
+
+      function checked(name) {
+        return document.querySelector('input[name="' + name + '"]:checked').value;
+      }
+
+      function visibleSteps() {
+        return Array.prototype.filter.call(document.querySelectorAll('.step'), function (s) {
+          return root.dataset.level !== 'tailored' || s.getAttribute('data-tailored') !== 'no';
+        });
+      }
+
+      function updateProgress() {
+        var steps = visibleSteps();
+        var done = steps.filter(function (s) { return s.querySelector('.step-check').checked; }).length;
+        document.getElementById('progress-text').textContent = done + ' of ' + steps.length + ' steps done';
+        document.getElementById('progress-fill').style.width = (steps.length ? done / steps.length * 100 : 0) + '%';
+      }
+
+      function apply() {
+        var level = checked('demo-level');
+        root.dataset.level = level;
+        root.dataset.updates = checked('demo-updates');
+        document.getElementById('checklist-title').textContent = 'Physician \u2192 RN \u00b7 ' + LEVELS[level];
+        updateProgress();
+      }
+
+      document.querySelectorAll('.demo-bar input').forEach(function (i) { i.addEventListener('change', apply); });
+      document.querySelectorAll('.step-check').forEach(function (c) { c.addEventListener('change', updateProgress); });
+
+      document.getElementById('jump').addEventListener('change', function () {
+        if (this.value) document.getElementById(this.value).scrollIntoView({ behavior: 'smooth' });
+      });
+
+      document.querySelectorAll('[data-placeholder-link]').forEach(function (a) {
+        a.addEventListener('click', function (e) { e.preventDefault(); });
+      });
+
+      apply();
+    })();
+  </script>
+
+</body>
+</html>
