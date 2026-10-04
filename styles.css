@@ -228,6 +228,10 @@ summary:focus-visible {
   border: 1px solid var(--line);
 }
 
+.after-cards {
+  margin-top: 24px;
+}
+
 .step-number {
   display: inline-flex;
   align-items: center;
