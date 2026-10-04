@@ -43,19 +43,14 @@
       <p class="only-tailored">Ordered for: Speed, Lower cost</p>
       <p class="update-status only-within">Updates included until [date]. Last updated: [date].</p>
       <p class="update-status only-after">Updates for this checklist ended on [date]. Last updated: [date]. Rules change, so confirm critical steps with the official source.</p>
-      <div class="actions">
+      <div class="actions pdf-actions">
         <button class="button button--secondary" type="button">Download PDF</button>
+        <p class="small">The PDF includes empty checkboxes for printing.</p>
       </div>
       <p class="small cta-note">PDF generated on [date]. The online version always shows the latest updates.</p>
-
-      <!-- 2. PROGRESS -->
-      <div class="progress checklist-progress">
-        <p class="progress-text" id="progress-text" aria-live="polite">4 of 18 steps done</p>
-        <div class="progress-bar" aria-hidden="true"><span id="progress-fill"></span></div>
-      </div>
     </div>
 
-    <!-- 3–5. STAGES AND NAVIGATION -->
+    <!-- STAGES AND NAVIGATION -->
     <div class="container checklist-layout">
       <nav class="stage-nav" aria-label="Stages">
         <p class="nav-title">Stages</p>
@@ -84,10 +79,10 @@
             <h2 id="stage-1-title">Stage 1: Stage name (placeholder)</h2>
             <ol class="step-list">
             <li class="card step">
-              <input class="step-check" type="checkbox" id="step-1" checked>
+              <span class="step-count" aria-hidden="true"></span>
               <div class="step-body">
                 <p class="tags"><span class="tag">Sample content</span></p>
-                <label class="check-title" for="step-1"><span class="step-num"></span>Step title (placeholder)</label>
+                <h3 class="check-title"><span class="visually-hidden step-num"></span>Step title (placeholder)</h3>
                 <p>Placeholder: one sentence describing what to do in this step.</p>
                 <a class="source-link" href="#" data-placeholder-link>Source: official website (placeholder)</a>
                 <details class="step-details">
@@ -110,10 +105,10 @@
               </div>
             </li>
             <li class="card step">
-              <input class="step-check" type="checkbox" id="step-2" checked>
+              <span class="step-count" aria-hidden="true"></span>
               <div class="step-body">
                 <p class="tags"><span class="tag">Sample content</span></p>
-                <label class="check-title" for="step-2"><span class="step-num"></span>Step title (placeholder)</label>
+                <h3 class="check-title"><span class="visually-hidden step-num"></span>Step title (placeholder)</h3>
                 <p>Placeholder: one sentence describing what to do in this step.</p>
                 <a class="source-link" href="#" data-placeholder-link>Source: official website (placeholder)</a>
                 <details class="step-details">
@@ -136,10 +131,10 @@
               </div>
             </li>
             <li class="card step">
-              <input class="step-check" type="checkbox" id="step-3" checked>
+              <span class="step-count" aria-hidden="true"></span>
               <div class="step-body">
                 <p class="tags"><span class="tag">Sample content</span><span class="tag tag--strong">State-specific</span></p>
-                <label class="check-title" for="step-3"><span class="step-num"></span>Step title (placeholder)</label>
+                <h3 class="check-title"><span class="visually-hidden step-num"></span>Step title (placeholder)</h3>
                 <p>Placeholder: one sentence describing what to do in this step.</p>
                 <a class="source-link" href="#" data-placeholder-link>Source: official website (placeholder)</a>
                 <details class="step-details">
@@ -162,10 +157,10 @@
               </div>
             </li>
             <li class="card step">
-              <input class="step-check" type="checkbox" id="step-4" checked>
+              <span class="step-count" aria-hidden="true"></span>
               <div class="step-body">
                 <p class="tags"><span class="tag">Sample content</span></p>
-                <label class="check-title" for="step-4"><span class="step-num"></span>Step title (placeholder)</label>
+                <h3 class="check-title"><span class="visually-hidden step-num"></span>Step title (placeholder)</h3>
                 <p>Placeholder: one sentence describing what to do in this step.</p>
                 <a class="source-link" href="#" data-placeholder-link>Source: official website (placeholder)</a>
                 <details class="step-details">
@@ -188,10 +183,10 @@
               </div>
             </li>
             <li class="card step" data-tailored="no">
-              <input class="step-check" type="checkbox" id="step-5">
+              <span class="step-count" aria-hidden="true"></span>
               <div class="step-body">
                 <p class="tags"><span class="tag">Sample content</span></p>
-                <label class="check-title" for="step-5"><span class="step-num"></span>Step title (placeholder)</label>
+                <h3 class="check-title"><span class="visually-hidden step-num"></span>Step title (placeholder)</h3>
                 <p>Placeholder: one sentence describing what to do in this step.</p>
                 <a class="source-link" href="#" data-placeholder-link>Source: official website (placeholder)</a>
                 <details class="step-details">
@@ -220,10 +215,10 @@
             <h2 id="stage-2-title">Stage 2: Stage name (placeholder)</h2>
             <ol class="step-list">
             <li class="card step">
-              <input class="step-check" type="checkbox" id="step-6">
+              <span class="step-count" aria-hidden="true"></span>
               <div class="step-body">
                 <p class="tags"><span class="tag">Sample content</span></p>
-                <label class="check-title" for="step-6"><span class="step-num"></span>Step title (placeholder)</label>
+                <h3 class="check-title"><span class="visually-hidden step-num"></span>Step title (placeholder)</h3>
                 <p>Placeholder: one sentence describing what to do in this step.</p>
                 <a class="source-link" href="#" data-placeholder-link>Source: official website (placeholder)</a>
                 <details class="step-details">
@@ -246,10 +241,10 @@
               </div>
             </li>
             <li class="card step">
-              <input class="step-check" type="checkbox" id="step-7">
+              <span class="step-count" aria-hidden="true"></span>
               <div class="step-body">
                 <p class="tags"><span class="tag">Sample content</span><span class="tag tag--strong">State-specific</span></p>
-                <label class="check-title" for="step-7"><span class="step-num"></span>Step title (placeholder)</label>
+                <h3 class="check-title"><span class="visually-hidden step-num"></span>Step title (placeholder)</h3>
                 <p>Placeholder: one sentence describing what to do in this step.</p>
                 <a class="source-link" href="#" data-placeholder-link>Source: official website (placeholder)</a>
                 <details class="step-details">
@@ -272,10 +267,10 @@
               </div>
             </li>
             <li class="card step" data-tailored="no">
-              <input class="step-check" type="checkbox" id="step-8">
+              <span class="step-count" aria-hidden="true"></span>
               <div class="step-body">
                 <p class="tags"><span class="tag">Sample content</span></p>
-                <label class="check-title" for="step-8"><span class="step-num"></span>Step title (placeholder)</label>
+                <h3 class="check-title"><span class="visually-hidden step-num"></span>Step title (placeholder)</h3>
                 <p>Placeholder: one sentence describing what to do in this step.</p>
                 <a class="source-link" href="#" data-placeholder-link>Source: official website (placeholder)</a>
                 <details class="step-details">
@@ -298,10 +293,10 @@
               </div>
             </li>
             <li class="card step">
-              <input class="step-check" type="checkbox" id="step-9">
+              <span class="step-count" aria-hidden="true"></span>
               <div class="step-body">
                 <p class="tags"><span class="tag">Sample content</span></p>
-                <label class="check-title" for="step-9"><span class="step-num"></span>Step title (placeholder)</label>
+                <h3 class="check-title"><span class="visually-hidden step-num"></span>Step title (placeholder)</h3>
                 <p>Placeholder: one sentence describing what to do in this step.</p>
                 <p class="small route-note">This step requires eligibility to work in the US; verify separately.</p>
                 <a class="source-link" href="#" data-placeholder-link>Source: official website (placeholder)</a>
@@ -325,10 +320,10 @@
               </div>
             </li>
             <li class="card step" data-tailored="no">
-              <input class="step-check" type="checkbox" id="step-10">
+              <span class="step-count" aria-hidden="true"></span>
               <div class="step-body">
                 <p class="tags"><span class="tag">Sample content</span></p>
-                <label class="check-title" for="step-10"><span class="step-num"></span>Step title (placeholder)</label>
+                <h3 class="check-title"><span class="visually-hidden step-num"></span>Step title (placeholder)</h3>
                 <p>Placeholder: one sentence describing what to do in this step.</p>
                 <a class="source-link" href="#" data-placeholder-link>Source: official website (placeholder)</a>
                 <details class="step-details">
@@ -357,10 +352,10 @@
             <h2 id="stage-3-title">Stage 3: Stage name (placeholder)</h2>
             <ol class="step-list">
             <li class="card step">
-              <input class="step-check" type="checkbox" id="step-11">
+              <span class="step-count" aria-hidden="true"></span>
               <div class="step-body">
                 <p class="tags"><span class="tag">Sample content</span><span class="tag tag--strong">State-specific</span></p>
-                <label class="check-title" for="step-11"><span class="step-num"></span>Step title (placeholder)</label>
+                <h3 class="check-title"><span class="visually-hidden step-num"></span>Step title (placeholder)</h3>
                 <p>Placeholder: one sentence describing what to do in this step.</p>
                 <a class="source-link" href="#" data-placeholder-link>Source: official website (placeholder)</a>
                 <details class="step-details">
@@ -383,10 +378,10 @@
               </div>
             </li>
             <li class="card step">
-              <input class="step-check" type="checkbox" id="step-12">
+              <span class="step-count" aria-hidden="true"></span>
               <div class="step-body">
                 <p class="tags"><span class="tag">Sample content</span></p>
-                <label class="check-title" for="step-12"><span class="step-num"></span>Step title (placeholder)</label>
+                <h3 class="check-title"><span class="visually-hidden step-num"></span>Step title (placeholder)</h3>
                 <p>Placeholder: one sentence describing what to do in this step.</p>
                 <a class="source-link" href="#" data-placeholder-link>Source: official website (placeholder)</a>
                 <details class="step-details">
@@ -409,10 +404,10 @@
               </div>
             </li>
             <li class="card step" data-tailored="no">
-              <input class="step-check" type="checkbox" id="step-13">
+              <span class="step-count" aria-hidden="true"></span>
               <div class="step-body">
                 <p class="tags"><span class="tag">Sample content</span></p>
-                <label class="check-title" for="step-13"><span class="step-num"></span>Step title (placeholder)</label>
+                <h3 class="check-title"><span class="visually-hidden step-num"></span>Step title (placeholder)</h3>
                 <p>Placeholder: one sentence describing what to do in this step.</p>
                 <a class="source-link" href="#" data-placeholder-link>Source: official website (placeholder)</a>
                 <details class="step-details">
@@ -435,10 +430,10 @@
               </div>
             </li>
             <li class="card step" data-tailored="no">
-              <input class="step-check" type="checkbox" id="step-14">
+              <span class="step-count" aria-hidden="true"></span>
               <div class="step-body">
                 <p class="tags"><span class="tag">Sample content</span></p>
-                <label class="check-title" for="step-14"><span class="step-num"></span>Step title (placeholder)</label>
+                <h3 class="check-title"><span class="visually-hidden step-num"></span>Step title (placeholder)</h3>
                 <p>Placeholder: one sentence describing what to do in this step.</p>
                 <a class="source-link" href="#" data-placeholder-link>Source: official website (placeholder)</a>
                 <details class="step-details">
@@ -467,10 +462,10 @@
             <h2 id="stage-4-title">Stage 4: Stage name (placeholder)</h2>
             <ol class="step-list">
             <li class="card step">
-              <input class="step-check" type="checkbox" id="step-15">
+              <span class="step-count" aria-hidden="true"></span>
               <div class="step-body">
                 <p class="tags"><span class="tag">Sample content</span><span class="tag tag--strong">State-specific</span></p>
-                <label class="check-title" for="step-15"><span class="step-num"></span>Step title (placeholder)</label>
+                <h3 class="check-title"><span class="visually-hidden step-num"></span>Step title (placeholder)</h3>
                 <p>Placeholder: one sentence describing what to do in this step.</p>
                 <a class="source-link" href="#" data-placeholder-link>Source: official website (placeholder)</a>
                 <details class="step-details">
@@ -493,10 +488,10 @@
               </div>
             </li>
             <li class="card step">
-              <input class="step-check" type="checkbox" id="step-16">
+              <span class="step-count" aria-hidden="true"></span>
               <div class="step-body">
                 <p class="tags"><span class="tag">Sample content</span></p>
-                <label class="check-title" for="step-16"><span class="step-num"></span>Step title (placeholder)</label>
+                <h3 class="check-title"><span class="visually-hidden step-num"></span>Step title (placeholder)</h3>
                 <p>Placeholder: one sentence describing what to do in this step.</p>
                 <p class="small route-note">This step requires eligibility to work in the US; verify separately.</p>
                 <a class="source-link" href="#" data-placeholder-link>Source: official website (placeholder)</a>
@@ -520,10 +515,10 @@
               </div>
             </li>
             <li class="card step">
-              <input class="step-check" type="checkbox" id="step-17">
+              <span class="step-count" aria-hidden="true"></span>
               <div class="step-body">
                 <p class="tags"><span class="tag">Sample content</span></p>
-                <label class="check-title" for="step-17"><span class="step-num"></span>Step title (placeholder)</label>
+                <h3 class="check-title"><span class="visually-hidden step-num"></span>Step title (placeholder)</h3>
                 <p>Placeholder: one sentence describing what to do in this step.</p>
                 <a class="source-link" href="#" data-placeholder-link>Source: official website (placeholder)</a>
                 <details class="step-details">
@@ -546,10 +541,10 @@
               </div>
             </li>
             <li class="card step" data-tailored="no">
-              <input class="step-check" type="checkbox" id="step-18">
+              <span class="step-count" aria-hidden="true"></span>
               <div class="step-body">
                 <p class="tags"><span class="tag">Sample content</span></p>
-                <label class="check-title" for="step-18"><span class="step-num"></span>Step title (placeholder)</label>
+                <h3 class="check-title"><span class="visually-hidden step-num"></span>Step title (placeholder)</h3>
                 <p>Placeholder: one sentence describing what to do in this step.</p>
                 <a class="source-link" href="#" data-placeholder-link>Source: official website (placeholder)</a>
                 <details class="step-details">
@@ -587,7 +582,7 @@
   </div>
 
   <script>
-    // Demo switching, progress count and stage jumping only. Nothing is stored or sent.
+    // Demo switching and stage jumping only. Nothing is stored or sent.
     (function () {
       var root = document.getElementById('checklist');
       var LEVELS = { overview: 'Overview', detailed: 'Detailed', tailored: 'Tailored' };
@@ -596,29 +591,14 @@
         return document.querySelector('input[name="' + name + '"]:checked').value;
       }
 
-      function visibleSteps() {
-        return Array.prototype.filter.call(document.querySelectorAll('.step'), function (s) {
-          return root.dataset.level !== 'tailored' || s.getAttribute('data-tailored') !== 'no';
-        });
-      }
-
-      function updateProgress() {
-        var steps = visibleSteps();
-        var done = steps.filter(function (s) { return s.querySelector('.step-check').checked; }).length;
-        document.getElementById('progress-text').textContent = done + ' of ' + steps.length + ' steps done';
-        document.getElementById('progress-fill').style.width = (steps.length ? done / steps.length * 100 : 0) + '%';
-      }
-
       function apply() {
         var level = checked('demo-level');
         root.dataset.level = level;
         root.dataset.updates = checked('demo-updates');
         document.getElementById('checklist-title').textContent = 'Physician \u2192 RN \u00b7 ' + LEVELS[level];
-        updateProgress();
       }
 
       document.querySelectorAll('.demo-bar input').forEach(function (i) { i.addEventListener('change', apply); });
-      document.querySelectorAll('.step-check').forEach(function (c) { c.addEventListener('change', updateProgress); });
 
       document.getElementById('jump').addEventListener('change', function () {
         if (this.value) document.getElementById(this.value).scrollIntoView({ behavior: 'smooth' });

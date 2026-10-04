@@ -701,8 +701,15 @@ a.placeholder {
   color: var(--text-muted);
 }
 
-.checklist-progress {
-  margin: 24px 0 0;
+.pdf-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+}
+
+.pdf-actions p {
+  margin: 0;
 }
 
 #checklist:not([data-level="tailored"]) .only-tailored,
@@ -783,12 +790,19 @@ a.placeholder {
   counter-increment: step;
 }
 
-.step-check {
+.step-count {
+  display: inline-flex;
   flex: none;
-  width: 20px;
-  height: 20px;
-  margin: 4px 0 0;
-  accent-color: var(--text);
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  font-weight: 700;
+  border: 1px solid var(--text);
+}
+
+.step-count::before {
+  content: counter(step);
 }
 
 .step-body {
@@ -801,20 +815,21 @@ a.placeholder {
 }
 
 .check-title {
-  display: block;
   margin-bottom: 6px;
   font-size: 1.05rem;
-  font-weight: 600;
-  cursor: pointer;
 }
 
 .step-num::before {
   content: "Step " counter(step) ": ";
 }
 
-.step:has(.step-check:checked) .check-title {
-  color: var(--text-muted);
-  text-decoration: line-through;
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
 
 .source-link,
