@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pathway Questionnaire Wireframe</title>
+  <meta name="description" content="Wireframe: four-step questionnaire for the US licensing pathway finder.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="placeholder placeholder--logo" aria-label="Logo placeholder, back to home">Logo</a>
+    </div>
+  </header>
+
+  <main class="container wizard">
+    <form id="wizard" novalidate>
+
+      <div class="progress" id="progress">
+        <p class="progress-text" id="progress-text" aria-live="polite">Step 1 of 4</p>
+        <div class="progress-bar" aria-hidden="true"><span id="progress-fill"></span></div>
+      </div>
+
+      <!-- STEP 1: BACKGROUND -->
+      <section class="screen" id="step-1" data-step="1">
+        <fieldset aria-labelledby="q1-title" aria-describedby="q1-hint">
+          <h1 class="step-title" id="q1-title" tabindex="-1">What&rsquo;s your professional background?</h1>
+          <p class="hint" id="q1-hint">Trained outside the US.</p>
+          <div class="options">
+            <label class="option">
+              <input type="radio" name="profession" value="physician">
+              <span class="option-title">Physician</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="profession" value="nurse">
+              <span class="option-title">Nurse</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="profession" value="other">
+              <span class="option-title">Other healthcare professional</span>
+            </label>
+          </div>
+        </fieldset>
+      </section>
+
+      <!-- END SCREEN: OTHER PROFESSION -->
+      <section class="screen" id="screen-other" hidden>
+        <p class="section-label">End screen — Not covered yet</p>
+        <h1 class="step-title" tabindex="-1">We currently cover physicians and nurses.</h1>
+        <p class="hint">Leave your email and we&rsquo;ll let you know when we add more.</p>
+        <div class="field">
+          <label for="notify-email">Email</label>
+          <input class="input" type="email" id="notify-email" name="email" autocomplete="email" placeholder="you@example.com">
+        </div>
+        <div class="actions">
+          <button class="button" type="button" id="notify-button">Notify me</button>
+        </div>
+        <p class="small cta-note" id="notify-note" hidden>Placeholder: nothing is sent in this wireframe.</p>
+      </section>
+
+      <!-- STEP 2: COUNTRY OF EDUCATION -->
+      <section class="screen" id="step-2" data-step="2" hidden>
+        <h1 class="step-title" id="q2-title" tabindex="-1">Where did you complete your medical degree?</h1>
+        <p class="hint" id="q2-hint">Choose the country where you earned your degree, not your citizenship. If you studied in more than one country, choose where you earned your primary degree.</p>
+        <div class="field">
+          <label for="country">Country (searchable dropdown placeholder)</label>
+          <input class="input" id="country" name="country" list="country-list" autocomplete="off" placeholder="Start typing a country" aria-describedby="q2-hint country-note">
+          <datalist id="country-list">
+            <option value="Brazil">
+            <option value="Egypt">
+            <option value="India">
+            <option value="Nigeria">
+            <option value="Pakistan">
+            <option value="Philippines">
+            <option value="Ukraine">
+            <option value="More than one country">
+          </datalist>
+          <p class="small cta-note" id="country-note">Sample list only. The final version will list all countries.</p>
+        </div>
+      </section>
+
+      <!-- STEP 3: GOAL -->
+      <section class="screen" id="step-3" data-step="3" hidden>
+        <fieldset aria-labelledby="q3-title" aria-describedby="q3-hint">
+          <h1 class="step-title" id="q3-title" tabindex="-1">What are you considering?</h1>
+          <p class="hint" id="q3-hint">Pick the closest fit. You&rsquo;ll see other options too.</p>
+          <div class="options">
+            <label class="option">
+              <input type="radio" name="goal" value="stay">
+              <span>
+                <span class="option-title">Stay in my profession</span>
+                <span class="option-desc" data-physician="Pursue the physician route (residency and licensure)" data-nurse="Validate my nursing credentials and work as an RN"></span>
+              </span>
+            </label>
+            <label class="option">
+              <input type="radio" name="goal" value="switch">
+              <span>
+                <span class="option-title">Move to a different role</span>
+                <span class="option-desc" data-physician="For example RN or PA" data-nurse="For example NP or PA"></span>
+              </span>
+            </label>
+            <label class="option">
+              <input type="radio" name="goal" value="interim">
+              <span>
+                <span class="option-title">Start with an interim role</span>
+                <span class="option-desc">A position that builds US experience while I plan a longer path.</span>
+              </span>
+            </label>
+            <label class="option">
+              <input type="radio" name="goal" value="unsure">
+              <span>
+                <span class="option-title">I&rsquo;m not sure. Show me the options.</span>
+              </span>
+            </label>
+          </div>
+        </fieldset>
+      </section>
+
+      <!-- STEP 4: TARGET STATE -->
+      <section class="screen" id="step-4" data-step="4" hidden>
+        <fieldset aria-labelledby="q4-title" aria-describedby="q4-hint">
+          <h1 class="step-title" id="q4-title" tabindex="-1">Where in the US would you like to practice?</h1>
+          <p class="hint" id="q4-hint">Licensing rules are set by each state. You can compare other states later.</p>
+          <div class="options options--grid">
+            <label class="option"><input type="radio" name="state" value="Arizona"><span class="option-title">Arizona</span></label>
+            <label class="option"><input type="radio" name="state" value="California"><span class="option-title">California</span></label>
+            <label class="option"><input type="radio" name="state" value="Florida"><span class="option-title">Florida</span></label>
+            <label class="option"><input type="radio" name="state" value="Illinois"><span class="option-title">Illinois</span></label>
+            <label class="option"><input type="radio" name="state" value="New Jersey"><span class="option-title">New Jersey</span></label>
+            <label class="option"><input type="radio" name="state" value="New York"><span class="option-title">New York</span></label>
+            <label class="option"><input type="radio" name="state" value="Texas"><span class="option-title">Texas</span></label>
+            <label class="option"><input type="radio" name="state" value="unsure"><span class="option-title">I&rsquo;m not sure yet</span></label>
+            <label class="option"><input type="radio" name="state" value="unlisted"><span class="option-title">My state isn&rsquo;t listed</span></label>
+          </div>
+          <div class="field extra-field" id="other-state-field" hidden>
+            <label for="other-state">Which state? <span class="small">(optional)</span></label>
+            <input class="input" type="text" id="other-state" name="other-state" autocomplete="off">
+          </div>
+        </fieldset>
+      </section>
+
+      <!-- RESULTS PLACEHOLDER -->
+      <section class="screen" id="screen-results" hidden>
+        <p class="section-label">Results (placeholder)</p>
+        <h1 class="step-title" tabindex="-1">Your routes (placeholder)</h1>
+        <p class="hint">This page will be designed next.</p>
+        <div class="placeholder placeholder--media" aria-hidden="true">Routes list / comparison</div>
+        <h2 class="summary-title">Your answers (for testing)</h2>
+        <dl class="summary" id="summary"></dl>
+        <div class="actions">
+          <a class="button button--secondary" href="questionnaire.html">Start over</a>
+        </div>
+      </section>
+
+      <div class="wizard-nav" id="wizard-nav">
+        <button class="button button--secondary" type="button" id="back">Back</button>
+        <button class="button" type="submit" id="next" disabled>Next</button>
+      </div>
+
+    </form>
+  </main>
+
+  <script>
+    // Step switching only. Nothing is stored or sent.
+    (function () {
+      var form = document.getElementById('wizard');
+      var next = document.getElementById('next');
+      var back = document.getElementById('back');
+      var progress = document.getElementById('progress');
+      var current = 'step-1';
+      var trail = [];
+
+      var countryOptions = Array.prototype.map.call(
+        document.querySelectorAll('#country-list option'),
+        function (o) { return o.value; }
+      );
+
+      function radio(name) {
+        var el = form.querySelector('input[name="' + name + '"]:checked');
+        return el ? el.value : '';
+      }
+
+      function radioLabel(name) {
+        var el = form.querySelector('input[name="' + name + '"]:checked');
+        return el ? el.closest('label').querySelector('.option-title').textContent : '';
+      }
+
+      function matchedCountry() {
+        var v = form.country.value.trim().toLowerCase();
+        for (var i = 0; i < countryOptions.length; i++) {
+          if (countryOptions[i].toLowerCase() === v) return countryOptions[i];
+        }
+        return '';
+      }
+
+      function isAnswered() {
+        switch (current) {
+          case 'step-1': return !!radio('profession');
+          case 'step-2': return !!matchedCountry();
+          case 'step-3': return !!radio('goal');
+          case 'step-4': return !!radio('state');
+          default: return false;
+        }
+      }
+
+      function applyProfession() {
+        var p = radio('profession');
+        document.getElementById('q2-title').textContent = p === 'nurse'
+          ? 'Where did you complete your nursing education?'
+          : 'Where did you complete your medical degree?';
+        form.querySelectorAll('.option-desc[data-physician]').forEach(function (el) {
+          el.textContent = el.getAttribute('data-' + (p === 'nurse' ? 'nurse' : 'physician'));
+        });
+      }
+
+      function fillSummary() {
+        var state = radio('state');
+        var stateText = state === 'unlisted'
+          ? 'Not listed' + (form['other-state'].value.trim() ? ': ' + form['other-state'].value.trim() : '')
+          : radioLabel('state');
+        var rows = [
+          ['Background', radioLabel('profession')],
+          ['Country of education', matchedCountry()],
+          ['Considering', radioLabel('goal')],
+          ['State', stateText]
+        ];
+        var dl = document.getElementById('summary');
+        dl.innerHTML = '';
+        rows.forEach(function (r) {
+          var dt = document.createElement('dt'); dt.textContent = r[0];
+          var dd = document.createElement('dd'); dd.textContent = r[1];
+          dl.appendChild(dt); dl.appendChild(dd);
+        });
+      }
+
+      function show(id, focus) {
+        document.querySelectorAll('.screen').forEach(function (s) { s.hidden = s.id !== id; });
+        current = id;
+        var screen = document.getElementById(id);
+        var step = screen.getAttribute('data-step');
+        progress.hidden = !step;
+        if (step) {
+          document.getElementById('progress-text').textContent = 'Step ' + step + ' of 4';
+          document.getElementById('progress-fill').style.width = (step * 25) + '%';
+        }
+        next.hidden = !step;
+        update();
+        if (focus) screen.querySelector('.step-title').focus();
+        window.scrollTo(0, 0);
+      }
+
+      function go(id) {
+        trail.push(current);
+        show(id, true);
+      }
+
+      function update() {
+        next.disabled = !isAnswered();
+        document.getElementById('other-state-field').hidden = radio('state') !== 'unlisted';
+      }
+
+      form.addEventListener('change', update);
+      form.addEventListener('input', update);
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (current === 'screen-other') { document.getElementById('notify-note').hidden = false; return; }
+        if (!isAnswered()) return;
+        if (current === 'step-1') {
+          applyProfession();
+          go(radio('profession') === 'other' ? 'screen-other' : 'step-2');
+        } else if (current === 'step-2') {
+          form.country.value = matchedCountry();
+          go('step-3');
+        } else if (current === 'step-3') {
+          go('step-4');
+        } else if (current === 'step-4') {
+          fillSummary();
+          go('screen-results');
+        }
+      });
+
+      back.addEventListener('click', function () {
+        if (!trail.length) { window.location.href = 'index.html'; return; }
+        show(trail.pop(), true);
+      });
+
+      document.getElementById('notify-button').addEventListener('click', function () {
+        document.getElementById('notify-note').hidden = false;
+      });
+
+      show('step-1', false);
+    })();
+  </script>
+
+</body>
+</html>

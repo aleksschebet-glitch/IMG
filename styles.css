@@ -323,3 +323,177 @@ summary:focus-visible {
 
   .placeholder--media { height: 360px; }
 }
+
+/* Questionnaire (wizard) */
+[hidden] {
+  display: none !important;
+}
+
+.wizard {
+  max-width: 40rem;
+  padding-block: 32px 48px;
+}
+
+.progress {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.progress-text {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.progress-bar {
+  height: 8px;
+  background: var(--placeholder);
+}
+
+.progress-bar span {
+  display: block;
+  height: 100%;
+  width: 25%;
+  background: var(--text-muted);
+}
+
+fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.step-title {
+  font-size: 1.5rem;
+}
+
+.step-title:focus {
+  outline: none;
+}
+
+.hint {
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.options {
+  display: grid;
+  gap: 12px;
+}
+
+.option {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  min-height: 44px;
+  border: 1px solid var(--line);
+  cursor: pointer;
+}
+
+.option input {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  margin: 2px 0 0;
+  accent-color: var(--text);
+}
+
+.option:has(input:checked) {
+  background: var(--bg-muted);
+  box-shadow: inset 0 0 0 2px var(--text);
+}
+
+.option:has(input:focus-visible) {
+  outline: 3px solid var(--text);
+  outline-offset: 2px;
+}
+
+.option-title {
+  display: block;
+  font-weight: 600;
+}
+
+.option-desc {
+  display: block;
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+}
+
+.field label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.extra-field {
+  margin-top: 16px;
+}
+
+.input {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  font: inherit;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--text-muted);
+  border-radius: 0;
+}
+
+.input:focus-visible {
+  outline: 3px solid var(--text);
+  outline-offset: 2px;
+}
+
+button.button {
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.wizard-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.summary-title {
+  font-size: 1.1rem;
+  margin-top: 32px;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 16px;
+  margin: 0;
+}
+
+.summary dt {
+  color: var(--text-muted);
+}
+
+.summary dd {
+  margin: 0;
+  min-width: 0;
+}
+
+@media (min-width: 640px) {
+  .options--grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+a.placeholder {
+  text-decoration: none;
+}
