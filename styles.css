@@ -232,6 +232,10 @@ summary:focus-visible {
   margin-top: 24px;
 }
 
+.cta-note {
+  margin-top: 12px;
+}
+
 .step-number {
   display: inline-flex;
   align-items: center;
