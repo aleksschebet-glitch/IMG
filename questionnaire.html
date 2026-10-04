@@ -141,17 +141,97 @@
         </fieldset>
       </section>
 
-      <!-- RESULTS PLACEHOLDER -->
-      <section class="screen" id="screen-results" hidden>
-        <p class="section-label">Results (placeholder)</p>
-        <h1 class="step-title" tabindex="-1">Your routes (placeholder)</h1>
-        <p class="hint">This page will be designed next.</p>
-        <div class="placeholder placeholder--media" aria-hidden="true">Routes list / comparison</div>
-        <h2 class="summary-title">Your answers (for testing)</h2>
-        <dl class="summary" id="summary"></dl>
-        <div class="actions">
-          <a class="button button--secondary" href="questionnaire.html">Start over</a>
+      <!-- FREE RESULTS -->
+      <section class="screen results" id="screen-results" hidden>
+        <p class="section-label">Results (free)</p>
+
+        <!-- 1. Answer summary -->
+        <div class="answer-summary">
+          <p class="answer-line" id="answer-line"></p>
+          <button class="link-button" type="button" id="change-answers">Change answers</button>
         </div>
+
+        <!-- 2. Routes -->
+        <h1 class="step-title" tabindex="-1">Your routes</h1>
+        <p class="hint" id="routes-hint" hidden>Showing all routes. None is highlighted because you&rsquo;re still exploring.</p>
+        <ol class="route-list" id="route-list"></ol>
+
+        <!-- 3. State -->
+        <div class="result-block">
+          <label class="state-switch" for="view-state">
+            <span>Viewing:</span>
+            <select class="input" id="view-state" name="view-state">
+              <option value="Arizona">Arizona</option>
+              <option value="California">California</option>
+              <option value="Florida">Florida</option>
+              <option value="Illinois">Illinois</option>
+              <option value="New Jersey">New Jersey</option>
+              <option value="New York">New York</option>
+              <option value="Texas">Texas</option>
+              <option value="unsure">I&rsquo;m not sure yet</option>
+              <option value="unlisted">My state isn&rsquo;t listed</option>
+            </select>
+          </label>
+          <p class="state-note" id="state-note" aria-live="polite"></p>
+          <div class="field" id="state-email-field" hidden>
+            <label for="state-email">Tell me when it&rsquo;s added <span class="small">(optional)</span></label>
+            <div class="inline-form">
+              <input class="input" type="email" id="state-email" autocomplete="email" placeholder="you@example.com">
+              <button class="button button--secondary" type="button" data-placeholder-note="state-email-note">Notify me</button>
+            </div>
+            <p class="small cta-note" id="state-email-note" hidden>Placeholder: nothing is sent in this wireframe.</p>
+          </div>
+        </div>
+
+        <!-- 4. Optional email -->
+        <div class="result-block result-block--muted">
+          <label for="summary-email" class="block-title">Want to keep this? Send me a summary of my routes.</label>
+          <div class="inline-form">
+            <input class="input" type="email" id="summary-email" autocomplete="email" placeholder="you@example.com">
+            <button class="button button--secondary" type="button" data-placeholder-note="summary-email-note">Send summary</button>
+          </div>
+          <p class="small cta-note" id="summary-email-note" hidden>Placeholder: nothing is sent in this wireframe.</p>
+        </div>
+
+        <!-- 5. Checklist -->
+        <h2 class="results-h2">Get your checklist</h2>
+        <fieldset class="result-step" aria-labelledby="pick-route-title">
+          <h3 id="pick-route-title">Step A: Choose a route</h3>
+          <div class="options" id="route-options"></div>
+        </fieldset>
+        <fieldset class="result-step" aria-labelledby="pick-level-title">
+          <h3 id="pick-level-title">Step B: Choose a level</h3>
+          <div class="options">
+            <label class="option">
+              <input type="radio" name="level" value="overview">
+              <span><span class="option-title">Overview</span><span class="option-desc">Price: TBD</span></span>
+            </label>
+            <label class="option">
+              <input type="radio" name="level" value="detailed">
+              <span><span class="option-title">Detailed</span><span class="option-desc">Price: TBD</span></span>
+            </label>
+            <label class="option">
+              <input type="radio" name="level" value="tailored">
+              <span><span class="option-title">Tailored</span><span class="option-desc">Price: TBD</span></span>
+            </label>
+          </div>
+        </fieldset>
+        <fieldset class="result-step" id="priorities" aria-labelledby="priorities-title" aria-describedby="priorities-hint" hidden>
+          <h3 id="priorities-title">What matters most to you?</h3>
+          <p class="hint" id="priorities-hint">Choose up to two.</p>
+          <div class="options">
+            <label class="option"><input type="checkbox" name="priority" value="speed"><span class="option-title">Speed</span></label>
+            <label class="option"><input type="checkbox" name="priority" value="cost"><span class="option-title">Lower cost</span></label>
+            <label class="option"><input type="checkbox" name="priority" value="scope"><span class="option-title">Broad scope of practice</span></label>
+            <label class="option"><input type="checkbox" name="priority" value="none"><span class="option-title">No strong preference</span></label>
+          </div>
+        </fieldset>
+        <div class="actions">
+          <button class="button" type="button" id="checkout">Continue to checkout (placeholder)</button>
+        </div>
+
+        <!-- 6. Disclaimer -->
+        <p class="small results-disclaimer">This site provides general information about US licensing and training pathways. It is not legal, immigration, or professional advice, and it does not cover immigration matters.</p>
       </section>
 
       <div class="wizard-nav" id="wizard-nav">
@@ -163,7 +243,7 @@
   </main>
 
   <script>
-    // Step switching only. Nothing is stored or sent.
+    // Step switching and results display only. Nothing is stored or sent.
     (function () {
       var form = document.getElementById('wizard');
       var next = document.getElementById('next');
@@ -215,24 +295,123 @@
         });
       }
 
-      function fillSummary() {
-        var state = radio('state');
-        var stateText = state === 'unlisted'
-          ? 'Not listed' + (form['other-state'].value.trim() ? ': ' + form['other-state'].value.trim() : '')
-          : radioLabel('state');
-        var rows = [
-          ['Background', radioLabel('profession')],
-          ['Country of education', matchedCountry()],
-          ['Considering', radioLabel('goal')],
-          ['State', stateText]
-        ];
-        var dl = document.getElementById('summary');
-        dl.innerHTML = '';
-        rows.forEach(function (r) {
-          var dt = document.createElement('dt'); dt.textContent = r[0];
-          var dd = document.createElement('dd'); dd.textContent = r[1];
-          dl.appendChild(dt); dl.appendChild(dd);
+      // Results: sample routes per profession. kind matches the step 3 answer.
+      var ROUTES = {
+        physician: [
+          { title: 'Physician route (residency and licensure)', kind: 'stay' },
+          { title: 'Physician → RN', kind: 'switch' },
+          { title: 'Physician → PA', kind: 'switch' },
+          { title: 'Interim roles', kind: 'interim' }
+        ],
+        nurse: [
+          { title: 'Validate your RN credentials', kind: 'stay' },
+          { title: 'RN → NP', kind: 'switch' },
+          { title: 'RN → PA', kind: 'switch' },
+          { title: 'Interim roles', kind: 'interim' }
+        ]
+      };
+      var GOAL_TEXT = {
+        stay: 'staying in your profession',
+        switch: 'a different role',
+        interim: 'an interim role',
+        unsure: 'all options'
+      };
+
+      function el(tag, cls, text) {
+        var e = document.createElement(tag);
+        if (cls) e.className = cls;
+        if (text) e.textContent = text;
+        return e;
+      }
+
+      function orderedRoutes() {
+        var goal = radio('goal');
+        var list = ROUTES[radio('profession')] || ROUTES.physician;
+        if (goal === 'unsure') return list.slice();
+        // Stable: routes matching the answer first, the rest in default order.
+        return list.filter(function (r) { return r.kind === goal; })
+          .concat(list.filter(function (r) { return r.kind !== goal; }));
+      }
+
+      function stateText() {
+        var s = radio('state');
+        if (s === 'unsure') return 'state not decided yet';
+        if (s === 'unlisted') return form['other-state'].value.trim() || 'state not listed';
+        return s;
+      }
+
+      function renderSummary() {
+        var country = matchedCountry();
+        document.getElementById('answer-line').textContent = [
+          radioLabel('profession'),
+          'trained in ' + (country === 'More than one country' ? 'more than one country' : country),
+          'considering ' + GOAL_TEXT[radio('goal')],
+          stateText()
+        ].join(' · ');
+      }
+
+      function renderStateNote() {
+        var s = radio('state');
+        var note = s === 'unsure'
+          ? 'We’ll show the national steps and mark where states differ.'
+          : s === 'unlisted'
+            ? 'State-specific details for your state are coming. Check your state board for current requirements.'
+            : 'Your checklist will include ' + s + ' requirements.';
+        document.getElementById('state-note').textContent = note;
+        document.getElementById('state-email-field').hidden = s !== 'unlisted';
+        form['view-state'].value = s;
+      }
+
+      function renderResults() {
+        var routes = orderedRoutes();
+        var highlight = radio('goal') !== 'unsure';
+        var list = document.getElementById('route-list');
+        var options = document.getElementById('route-options');
+        list.innerHTML = '';
+        options.innerHTML = '';
+        document.getElementById('routes-hint').hidden = highlight;
+
+        routes.forEach(function (r, i) {
+          var card = el('li', 'card route-card');
+          var tags = el('p', 'tags');
+          if (highlight && i === 0) {
+            card.className += ' route-card--closest';
+            tags.appendChild(el('span', 'tag tag--strong', 'Closest to your answer'));
+          }
+          tags.appendChild(el('span', 'tag', 'Sample content'));
+          card.appendChild(tags);
+          card.appendChild(el('h3', '', r.title));
+          card.appendChild(el('p', '', 'Placeholder: one sentence describing this route.'));
+          var ms = el('ul', 'feature-list');
+          [1, 2, 3].forEach(function (n) { ms.appendChild(el('li', '', 'Milestone ' + n + ' (placeholder)')); });
+          card.appendChild(ms);
+          if (r.kind === 'interim') {
+            card.appendChild(el('p', 'small route-note', 'Some roles require eligibility to work in the US; verify separately.'));
+          }
+          list.appendChild(card);
+
+          var label = el('label', 'option');
+          var input = el('input');
+          input.type = 'radio';
+          input.name = 'route';
+          input.value = String(i);
+          label.appendChild(input);
+          label.appendChild(el('span', 'option-title', r.title));
+          options.appendChild(label);
         });
+
+        form.querySelectorAll('input[name="level"]:checked, input[name="priority"]:checked')
+          .forEach(function (i) { i.checked = false; });
+        updateChecklist();
+        renderSummary();
+        renderStateNote();
+      }
+
+      function updateChecklist() {
+        document.getElementById('priorities').hidden = radio('level') !== 'tailored';
+        var boxes = form.querySelectorAll('input[name="priority"]');
+        var checked = form.querySelectorAll('input[name="priority"]:checked').length;
+        boxes.forEach(function (b) { b.disabled = !b.checked && checked >= 2 && b.value !== 'none'; });
       }
 
       function show(id, focus) {
@@ -246,6 +425,7 @@
           document.getElementById('progress-fill').style.width = (step * 25) + '%';
         }
         next.hidden = !step;
+        document.getElementById('wizard-nav').hidden = id === 'screen-results';
         update();
         if (focus) screen.querySelector('.step-title').focus();
         window.scrollTo(0, 0);
@@ -267,6 +447,7 @@
       form.addEventListener('submit', function (e) {
         e.preventDefault();
         if (current === 'screen-other') { document.getElementById('notify-note').hidden = false; return; }
+        if (current === 'screen-results') return;
         if (!isAnswered()) return;
         if (current === 'step-1') {
           applyProfession();
@@ -277,7 +458,7 @@
         } else if (current === 'step-3') {
           go('step-4');
         } else if (current === 'step-4') {
-          fillSummary();
+          renderResults();
           go('screen-results');
         }
       });
@@ -289,6 +470,41 @@
 
       document.getElementById('notify-button').addEventListener('click', function () {
         document.getElementById('notify-note').hidden = false;
+      });
+
+      // Results interactions
+      document.getElementById('change-answers').addEventListener('click', function () {
+        trail = [];
+        show('step-1', true);
+      });
+
+      form['view-state'].addEventListener('change', function () {
+        var r = form.querySelector('input[name="state"][value="' + this.value + '"]');
+        if (r) r.checked = true;
+        renderStateNote();
+        renderSummary();
+      });
+
+      form.querySelectorAll('input[name="priority"]').forEach(function (box) {
+        box.addEventListener('change', function () {
+          // "No strong preference" excludes the other choices, and the reverse.
+          if (box.checked) {
+            form.querySelectorAll('input[name="priority"]').forEach(function (b) {
+              if (b !== box && (box.value === 'none' || b.value === 'none')) b.checked = false;
+            });
+          }
+          updateChecklist();
+        });
+      });
+
+      form.querySelectorAll('input[name="level"]').forEach(function (r) {
+        r.addEventListener('change', updateChecklist);
+      });
+
+      document.querySelectorAll('[data-placeholder-note]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          document.getElementById(btn.getAttribute('data-placeholder-note')).hidden = false;
+        });
       });
 
       show('step-1', false);
