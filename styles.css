@@ -713,8 +713,6 @@ a.placeholder {
 }
 
 #checklist:not([data-level="tailored"]) .only-tailored,
-#checklist:not([data-updates="within"]) .only-within,
-#checklist:not([data-updates="after"]) .only-after,
 #checklist[data-level="overview"] .step-details,
 #checklist[data-level="tailored"] .step[data-tailored="no"] {
   display: none;

@@ -19,11 +19,6 @@
         <label><input type="radio" name="demo-level" value="detailed" checked> Detailed</label>
         <label><input type="radio" name="demo-level" value="tailored"> Tailored</label>
       </fieldset>
-      <fieldset class="segmented">
-        <legend>Updates</legend>
-        <label><input type="radio" name="demo-updates" value="within" checked> Within 30 days</label>
-        <label><input type="radio" name="demo-updates" value="after"> After 30 days</label>
-      </fieldset>
     </div>
   </div>
 
@@ -33,7 +28,7 @@
     </div>
   </header>
 
-  <div id="checklist" data-level="detailed" data-updates="within">
+  <div id="checklist" data-level="detailed">
 
     <!-- 1. HEADER -->
     <div class="container checklist-header">
@@ -41,13 +36,12 @@
       <h1 id="checklist-title">Physician &rarr; RN &middot; Detailed</h1>
       <p class="profile-line">Trained in India &middot; Texas &middot; Considering a different role</p>
       <p class="only-tailored">Ordered for: Speed, Lower cost</p>
-      <p class="update-status only-within">Updates included until [date]. Last updated: [date].</p>
-      <p class="update-status only-after">Updates for this checklist ended on [date]. Last updated: [date]. Rules change, so confirm critical steps with the official source.</p>
+      <p class="update-status">Last updated: [date]. Rules change, so confirm critical steps with the official source.</p>
       <div class="actions pdf-actions">
         <button class="button button--secondary" type="button">Download PDF</button>
         <p class="small">The PDF includes empty checkboxes for printing.</p>
       </div>
-      <p class="small cta-note">PDF generated on [date]. The online version always shows the latest updates.</p>
+      <p class="small cta-note">PDF generated on [date]. Check the online version for the latest update date.</p>
     </div>
 
     <!-- STAGES AND NAVIGATION -->
@@ -594,7 +588,6 @@
       function apply() {
         var level = checked('demo-level');
         root.dataset.level = level;
-        root.dataset.updates = checked('demo-updates');
         document.getElementById('checklist-title').textContent = 'Physician \u2192 RN \u00b7 ' + LEVELS[level];
       }
 
